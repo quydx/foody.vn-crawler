@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>{{title}}</h1>
+	<body>
+		<form action="" method="post" name="event_search">
+			{{form.hidden_tag()}}
+			<p> Please enter the food you want: 
+				<br>{{form.event_name(size=80)}}<br>
+			</p>
+			<p> Select a location: {{form.curr_location}} </p>
+			<p> Select a location: {{form.city}} </p>
+			<p>
+				<input type="submit" value="Find">
+			</p>
+		</form>
+	</body>
+	{% if posts %}
+		<table id="t01">
+			<thead>
+				<tr>
+					<th>Tên</th>
+					<th>Địa điểm</th>
+					<th>Quận</th>
+					<th>Khoảng cách</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for p in posts %}
+			<tr>
+					<td>{{ p.name }}</td>
+					<td>{{ p.street }}</td>
+					<td>{{ p.district }}</td>
+					<td>{{ p.distance }} m</td>
+			</tr> 
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+{% endblock %}

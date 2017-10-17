@@ -1,2 +1,2 @@
-# foody.vn-crawler
-School excercise
+#foody.vn-crawler #
+Python Flask simple crawler data from foody.vn
